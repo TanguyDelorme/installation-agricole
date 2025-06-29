@@ -1,0 +1,49 @@
+<mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class=" flex justify-between">
+      <mat-form-field appearance="fill" class="block mb-2">
+        <mat-label>Raison sociale</mat-label>
+        <input matInput formControlName="raisonsociale" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="block mb-2">
+        <mat-label>Adresse</mat-label>
+        <input matInput formControlName="adresse1" />
+      </mat-form-field>
+    </div>
+
+
+    <div class=" flex justify-between">
+      <mat-form-field appearance="fill" class="block mb-2">
+        <mat-label>Code postal</mat-label>
+        <input matInput formControlName="codepostal" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="block mb-2">
+        <mat-label>Commune</mat-label>
+        <input matInput formControlName="commune" />
+      </mat-form-field>
+    </div>
+
+    <div class=" flex justify-between">
+      <mat-form-field appearance="fill" class="block mb-2">
+        <mat-label>Statut Seveso</mat-label>
+        <input matInput formControlName="statutseveso" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="block mb-2">
+        <mat-label>État activité</mat-label>
+        <input matInput formControlName="etatactivite" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill" class="block mb-2">
+      <mat-label>Priorité nationale</mat-label>
+      <input matInput formControlName="prioritenationale" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Quitter</button>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Enregistrer</button>
+</mat-dialog-actions>

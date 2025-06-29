@@ -7,6 +7,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
+nmp i
 ng serve
 ```
 
@@ -32,6 +33,11 @@ To build the project run:
 
 ```bash
 ng build
+```
+
+## Deploy on github
+```bash
+ng deploy --base-href=/installation-agricole/
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.

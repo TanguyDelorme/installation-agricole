@@ -1,0 +1,6 @@
+.active {
+  background: var(--color-header-hover);
+  color: var(--color-header-text);
+  border-radius: 9999px;
+  transition: background 0.2s;
+}

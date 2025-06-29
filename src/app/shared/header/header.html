@@ -1,0 +1,20 @@
+<header class="h-15 p-3 bg-header-bg text-header-text shadow-md flex items-center">
+  <nav>
+    <ul class="flex space-x-8">
+      <li>
+        <a routerLink routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="flex items-center space-x-2 hover:bg-header-hover px-4 py-3 rounded-full transition-colors duration-200">
+          <span>Carte des installations</span>
+          <mat-icon>near_me</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/' + routesEvent.SEARCH" routerLinkActive="active" class="flex items-center space-x-2 hover:bg-header-hover px-4 py-3 rounded-full transition-colors duration-200">
+          <div class="flex items-center space-x-2">
+            <span>Rechercher</span>
+            <mat-icon>search</mat-icon>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
