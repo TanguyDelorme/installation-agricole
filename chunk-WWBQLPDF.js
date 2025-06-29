@@ -1,0 +1,1 @@
+import{Cb as p,Db as n,Wb as o,ib as a}from"./chunk-ZPPGPWNU.js";var s=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=a({type:t,selectors:[["app-map"]],decls:2,vars:0,template:function(e,m){e&1&&(p(0,"p"),o(1,"map works!"),n())},encapsulation:2})};export{s as Map};
