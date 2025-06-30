@@ -9,10 +9,10 @@ export const routes: Routes = [
 
   {
     path: '',
-    loadComponent: () => import('./features/map/map').then(e => e.Map),
+    loadComponent: () => import('./features/map/map.component').then(e => e.MapComponent),
   },
   {
     path: 'search',
-    loadComponent: () => import('./features/search/search').then(e => e.Search),
+    loadComponent: () => import('./features/search/search.component').then(e => e.SearchComponent),
   },
 ];

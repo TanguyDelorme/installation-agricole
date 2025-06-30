@@ -28,10 +28,10 @@ import {UpdateInstallationComponent} from './update-installation/update-installa
     MatIconModule,
     MatButtonModule
   ],
-  templateUrl: './search.html',
-  styleUrl: './search.css'
+  templateUrl: './search.component.html',
+  styleUrl: './search.component.css'
 })
-export class Search {
+export class SearchComponent {
   private readonly installationStore = inject(InstallationStore);
   private readonly fb = inject(FormBuilder);
   readonly dialog = inject(MatDialog);
