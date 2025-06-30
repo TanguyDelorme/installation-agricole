@@ -1,41 +1,36 @@
-<mat-dialog-content>
-  <dl>
-    <div class="flex justify-between">
-      <dt>Raison Sociale</dt>
-      <dd>{{ properties.raisonsociale }}</dd>
-    </div>
+<dl>
+  <div class="flex justify-between">
+    <dt>Raison Sociale</dt>
+    <dd>{{ installation()?.raisonsociale }}</dd>
+  </div>
 
-    <div class="flex justify-between">
-      <dt>Adresse</dt>
-      <dd>{{ properties.adresse1 }}</dd>
-    </div>
+  <div class="flex justify-between">
+    <dt>Adresse</dt>
+    <dd>{{ installation()?.adresse1 }}</dd>
+  </div>
 
-    <div class="flex justify-between">
-      <dt>Code postal</dt>
-      <dd>{{ properties.codepostal }}</dd>
-    </div>
+  <div class="flex justify-between">
+    <dt>Code postal</dt>
+    <dd>{{ installation()?.codepostal }}</dd>
+  </div>
 
-    <div class="flex justify-between">
-      <dt>Ville</dt>
-      <dd>{{ properties.commune }}</dd>
-    </div>
+  <div class="flex justify-between">
+    <dt>Ville</dt>
+    <dd>{{ installation()?.commune }}</dd>
+  </div>
 
-    <div class="flex justify-between">
-      <dt>Statut seveso</dt>
-      <dd>{{ properties.statutseveso ?? '-' }}</dd>
-    </div>
+  <div class="flex justify-between">
+    <dt>Statut seveso</dt>
+    <dd>{{ installation()?.statutseveso ?? '-' }}</dd>
+  </div>
 
-    <div class="flex justify-between">
-      <dt>Etat Activité</dt>
-      <dd>{{ properties.etatactivite ?? '-' }}</dd>
-    </div>
+  <div class="flex justify-between">
+    <dt>Etat Activité</dt>
+    <dd>{{ installation()?.etatactivite ?? '-' }}</dd>
+  </div>
 
-    <div class="flex justify-between">
-      <dt>Prorité nationale</dt>
-      <dd>{{ properties.prioritenationale }}</dd>
-    </div>
-  </dl>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Quitter</button>
-</mat-dialog-actions>
+  <div class="flex justify-between">
+    <dt>Prorité nationale</dt>
+    <dd>{{ installation()?.prioritenationale }}</dd>
+  </div>
+</dl>

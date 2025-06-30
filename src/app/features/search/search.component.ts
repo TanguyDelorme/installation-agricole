@@ -12,8 +12,8 @@ import {toSignal} from '@angular/core/rxjs-interop';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialog} from '@angular/material/dialog';
-import {ConsultationInstallationComponent} from './consultation-installation/consultation-installation.component';
 import {UpdateInstallationComponent} from './update-installation/update-installation.component';
+import {ConsultationModalComponent} from './consultation-modal/consultation-modal.component';
 
 @Component({
   selector: 'app-search',
@@ -49,15 +49,14 @@ export class SearchComponent {
     this.dataSource = new MatTableDataSource<InstallationModel>([]);
 
     this.dataSource.filterPredicate = (data: InstallationModel, filter: string) => {
-      const properties = data.properties;
-      const searchStr = Object.values(properties)
+      const searchStr = Object.values(data)
         .map(val => val ? val.toString().toLowerCase() : '')
         .join(' ');
       return searchStr.includes(filter.toLowerCase());
     };
 
     this.dataSource.sortingDataAccessor = (item, property) => {
-      return item.properties?.[property] ?? '';
+      return item?.[property] ?? '';
     };
 
     effect(() => {
@@ -81,20 +80,20 @@ export class SearchComponent {
   }
 
   openConsultationDialog(installation: InstallationModel) {
-    this.dialog.open(ConsultationInstallationComponent, {
-      data: installation.properties,
+    this.dialog.open(ConsultationModalComponent, {
+      data: installation,
       width: '500px'
     });
   }
 
   openModificationDialog(installation: InstallationModel) {
     const dialogRef = this.dialog.open(UpdateInstallationComponent, {
-      data: installation.properties,
+      data: installation,
       width: '800px'
     });
 
     dialogRef.afterClosed().subscribe(properties => {
-      this.installationStore.updateInstallation(properties, installation.properties.raisonsociale);
+      this.installationStore.updateInstallation(properties, installation.raisonsociale);
     });
   }
 }

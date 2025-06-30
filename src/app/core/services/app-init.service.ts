@@ -13,10 +13,13 @@ export class AppInitService {
   public async init(): Promise<void> {
     await firstValueFrom(this.http.get('assets/etablissements.geojson').pipe(
       tap((json: any) => {
-        const installations = json.features.map((feature: any) => ({
-          properties: feature.properties,
-          coordinates: feature.geometry?.coordinates ?? []
-        }));
+        const installations = json.features.map((feature: any) => {
+          const geo = feature.properties.geo_point_2d;
+          return {
+            ...feature.properties,
+            geo_point_2d: { lat: geo.lat, lng: geo.lon }
+          };
+        });
 
         this.installationStore.setInstallations(installations);
       })

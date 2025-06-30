@@ -1,1 +1,16 @@
-<p>map works!</p>
+<section class="w-full h-[80vh] overflow-hidden">
+  <google-map
+    [center]="center()"
+    [zoom]="ZOOM"
+    [height]="'100%'"
+    [width]="'100%'"
+    class="w-full h-full"
+  >
+    @for (marker of markers(); let index = $index; track index) {
+      <map-marker #markerRef="mapMarker" [position]="marker" (mapClick)="openInfoWindow(markerRef, index)"></map-marker>
+    }
+    <map-info-window #infoWindow>
+      <app-consultation-installation [installation]="selectedInstallation()!"></app-consultation-installation>
+    </map-info-window>
+  </google-map>
+</section>

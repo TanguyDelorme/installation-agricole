@@ -1,6 +1,11 @@
-import {PropertiesModel} from './properties.model';
-
 export interface InstallationModel {
-  properties: PropertiesModel;
-  coordinates: number[];
+  raisonsociale: string;
+  adresse1: string;
+  codepostal: string;
+  commune: string;
+  statutseveso?: string;
+  etatactivite?: string;
+  prioritenationale: string;
+  geo_point_2d: google.maps.LatLngLiteral
+  [key: string]: any;
 }

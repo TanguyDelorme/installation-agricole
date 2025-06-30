@@ -1,17 +1,12 @@
-import {Component, inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import {PropertiesModel} from '../../../core/models/properties.model';
+import {Component, input} from '@angular/core';
+import {InstallationModel} from '../../../core/models/installation.model';
 
 @Component({
   selector: 'app-consultation-installation',
-  imports: [
-    MatDialogModule,
-    MatButtonModule
-  ],
+  imports: [],
   templateUrl: './consultation-installation.component.html',
   styleUrl: './consultation-installation.component.css'
 })
 export class ConsultationInstallationComponent {
-  properties = inject<PropertiesModel>(MAT_DIALOG_DATA);
+  installation = input<InstallationModel>();
 }

@@ -1,5 +1,4 @@
 import {patchState, signalStore, withMethods, withState} from '@ngrx/signals';
-import {PropertiesModel} from '../models/properties.model';
 import {InstallationModel} from '../models/installation.model';
 
 type InstallationState = {
@@ -16,12 +15,12 @@ export const InstallationStore = signalStore(
     setInstallations(installations: InstallationModel[]) {
       patchState(store, { installations });
     },
-    updateInstallation(updatedProperties: PropertiesModel, oldRaisonSociale: string) {
+    updateInstallation(updatedProperties: InstallationModel, oldRaisonSociale: string) {
       const currentInstallations = store.installations();
 
       const newInstallations = currentInstallations.map(inst =>
-        inst.properties.raisonsociale === oldRaisonSociale
-          ? { ...inst, properties: { ...inst.properties, ...updatedProperties } }
+        inst.raisonsociale === oldRaisonSociale
+          ? { ...inst, ...updatedProperties }
           : inst
       );
 

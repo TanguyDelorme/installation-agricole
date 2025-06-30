@@ -1,10 +1,10 @@
 import {Component, inject} from '@angular/core';
-import {PropertiesModel} from '../../../core/models/properties.model';
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
+import {InstallationModel} from '../../../core/models/installation.model';
 
 @Component({
   selector: 'app-update-installation',
@@ -19,7 +19,7 @@ import {MatInput} from '@angular/material/input';
   styleUrl: './update-installation.component.css'
 })
 export class UpdateInstallationComponent {
-  properties = inject<PropertiesModel>(MAT_DIALOG_DATA);
+  properties = inject<InstallationModel>(MAT_DIALOG_DATA);
   private dialogRef = inject(MatDialogRef<UpdateInstallationComponent>);
   private fb = inject(FormBuilder);
 
